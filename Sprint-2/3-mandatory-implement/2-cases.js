@@ -14,3 +14,16 @@
 // You will need to come up with an appropriate name for the function
 // Use the MDN string documentation to help you find a solution
 // This might help https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+
+function toUpperSnakeCase(input) {
+    return input
+      .trim()                // Remove leading/trailing whitespace
+      .split(/\s+/)          // Split by one or more spaces
+      .map(word => word.toUpperCase()) // Convert each word to uppercase
+      .join('_');            // Join with underscores
+  }
+  
+  // Example usage:
+  console.log(toUpperSnakeCase("hello there"));          // "HELLO_THERE"
+  console.log(toUpperSnakeCase("lord of the rings"));    // "LORD_OF_THE_RINGS"
+  console.log(toUpperSnakeCase("  multiple   spaces ")); // "MULTIPLE_SPACES"
